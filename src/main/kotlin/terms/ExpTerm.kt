@@ -1,24 +1,19 @@
 package com.ssmnd.terms
 
-import com.ssmnd.util.Util.plus
-import com.ssmnd.util.Util.minus
-import com.ssmnd.util.Util.times
-import com.ssmnd.util.Util.div
-
 class ExpTerm : Term {
-    override val coefficient: Number
-    val variables: Map<Number, Char>
-    constructor(coefficient: Number, variables: Map<Number, Char>) {
+    override val coefficient: Double
+    val variables: Map<Double, Char>
+    constructor(coefficient: Double, variables: Map<Double, Char>) {
         this.coefficient = coefficient
-        this.variables = if (coefficient != 0.0) variables else mapOf()
+        this.variables = if (coefficient != 0.0) variables.mapKeys { it.key } else mapOf()
     }
-    constructor(number: Number) : this(number, mapOf())
-    constructor(coefficient: Number, base: Number, exponent: Char) : this(coefficient, mapOf(base to exponent))
-    constructor(variables: Map<Number, Char>) : this(1.0, variables)
+    constructor(number: Number) : this(number.toDouble(), mapOf())
+    constructor(coefficient: Number, base: Number, exponent: Char) : this(coefficient.toDouble(), mapOf(base.toDouble() to exponent))
+    constructor(variables: Map<Number, Char>) : this(1.0, variables.mapKeys { it.key.toDouble() })
     companion object {
         val ZERO = ExpTerm(0)
         val ONE = ExpTerm(1)
-        fun Map<Number, Char>.string() : String {
+        fun Map<Double, Char>.string() : String {
             var string = ""
             this.forEach { (char, exp) -> string += "$char^$exp" }
             return string

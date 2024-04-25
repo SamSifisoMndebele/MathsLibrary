@@ -1,7 +1,7 @@
 package com.ssmnd.terms
 
 interface Term {
-    val coefficient: Number
+    val coefficient: Double
     override fun toString(): String
 
     @Throws(ArithmeticException::class)

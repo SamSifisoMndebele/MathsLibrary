@@ -4,27 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb1c2d20-1211-48e2-b3b7-6c3dec8c0449" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/terms/ExpTerm.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/terms/PolTerm.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/terms/Term.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/util/Util.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/terms/ExpTermTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/terms/PolTermTest.kt" afterDir="false" />
+    <list default="true" id="eb1c2d20-1211-48e2-b3b7-6c3dec8c0449" name="Changes" comment="beta-1.0.0">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/terms/ExpTermTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/terms/PolTermTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/terms/PolTermTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +58,7 @@
         <option value="Kotlin Class" />
         <option value="Kotlin Object" />
         <option value="JUnit5 Test Class" />
+        <option value="JUnit3 Test Class" />
       </list>
     </option>
   </component>
@@ -95,13 +80,15 @@
     "Gradle.MathsLib [jar].executor": "Run",
     "Gradle.PTermTest.plus.executor": "Run",
     "Gradle.PTermTest.testToString.executor": "Run",
+    "Gradle.PolTermTest.executor": "Run",
     "JAR Application.MathsLib-1.0-SNAPSHOT.jar.executor": "Run",
     "JAR Application.MathsLib-1.0.0-beta.jar.executor": "Run",
     "Kotlin.MainKt.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit3",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3": "",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
@@ -129,30 +116,8 @@
       <recent name="terms" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.MainKt">
-    <configuration name="MathsLib [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="jar" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="PTermTest.testToString" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager">
+    <configuration name="PolTermTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -165,7 +130,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;terms.PTermTest.testToString&quot;" />
+            <option value="&quot;terms.PolTermTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -176,28 +141,9 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="MathsLib-1.0-SNAPSHOT.jar" type="JarApplication" temporary="true">
-      <option name="JAR_PATH" value="$PROJECT_DIR$/build/libs/MathsLib-1.0-SNAPSHOT.jar" />
-      <method v="2" />
-    </configuration>
-    <configuration name="MathsLib-1.0.0-beta.jar" type="JarApplication" temporary="true">
-      <option name="JAR_PATH" value="$PROJECT_DIR$/build/libs/MathsLib-1.0.0-beta.jar" />
-      <method v="2" />
-    </configuration>
-    <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.ssmnd.MainKt" />
-      <module name="MathsLib.main" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.MainKt" />
-        <item itemvalue="Gradle.MathsLib [jar]" />
-        <item itemvalue="JAR Application.MathsLib-1.0.0-beta.jar" />
-        <item itemvalue="JAR Application.MathsLib-1.0-SNAPSHOT.jar" />
-        <item itemvalue="Gradle.PTermTest.testToString" />
+        <item itemvalue="Gradle.PolTermTest" />
       </list>
     </recent_temporary>
   </component>
@@ -216,11 +162,24 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1713992646755</updated>
-      <workItem from="1713992646760" duration="14512000" />
+      <workItem from="1713992646760" duration="15460000" />
     </task>
+    <task id="LOCAL-00001" summary="beta-1.0.0">
+      <option name="closed" value="true" />
+      <created>1714008345953</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1714008345953</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="beta-1.0.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="beta-1.0.0" />
   </component>
 </project>

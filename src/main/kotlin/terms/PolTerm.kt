@@ -1,21 +1,16 @@
 package com.ssmnd.terms
 
-import com.ssmnd.util.Util.plus
-import com.ssmnd.util.Util.minus
-import com.ssmnd.util.Util.times
-import com.ssmnd.util.Util.div
-
 class PolTerm : Term {
-    override val coefficient: Number
-    val variables: Map<Char, Number>
-    constructor(coefficient: Number, variables: Map<Char, Number>) {
+    override val coefficient: Double
+    val variables: Map<Char, Double>
+    constructor(coefficient: Double, variables: Map<Char, Double>) {
         this.coefficient = coefficient
         this.variables = if (coefficient != 0.0) variables else mapOf()
     }
-    constructor(number: Number) : this(number, mapOf())
-    constructor(coefficient: Number, variable: Char) : this(coefficient, mapOf(variable to 1.0))
-    constructor(coefficient: Number, variable: Char, exponent: Number) : this(coefficient, mapOf(variable to exponent))
-    constructor(variables: Map<Char, Number>) : this(1.0, variables)
+    constructor(number: Number) : this(number.toDouble(), mapOf())
+    constructor(coefficient: Number, variable: Char) : this(coefficient.toDouble(), mapOf(variable to 1.0))
+    constructor(coefficient: Number, variable: Char, exponent: Number) : this(coefficient.toDouble(), mapOf(variable to exponent.toDouble()))
+    constructor(variables: Map<Char, Number>) : this(1.0, variables.mapValues { it.value.toDouble() })
     companion object {
         val ZERO = PolTerm(0)
         val ONE = PolTerm(1)
