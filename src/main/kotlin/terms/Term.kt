@@ -1,0 +1,16 @@
+package com.ssmnd.terms
+
+interface Term {
+    val coefficient: Number
+    override fun toString(): String
+
+    @Throws(ArithmeticException::class)
+    operator fun plus(term: Term) : Term
+    @Throws(ArithmeticException::class)
+    operator fun minus(term: Term) : Term
+    operator fun times(term: Term) : Term
+    operator fun div(term: Term) : Term
+
+    override fun equals(other: Any?): Boolean
+    override fun hashCode(): Int
+}
