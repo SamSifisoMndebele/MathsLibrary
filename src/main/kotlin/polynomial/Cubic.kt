@@ -1,28 +1,11 @@
-package polynomial
+package com.ssmnd.polynomial
 
-import java.util.*
 import kotlin.math.*
 
 object Cubic {
     @JvmStatic
     fun main(args: Array<String>) {
-        val scanner = Scanner(System.`in`)
-        println("\nGiven a cubic equation ax^3 + bx^2 + cx + d = 0, enter the values of a, b, c and d to calculate the roots.")
-        print("a = ")
-        val a = scanner.nextDouble()
-        print("b = ")
-        val b = scanner.nextDouble()
-        print("c = ")
-        val c = scanner.nextDouble()
-        print("d = ")
-        val d = scanner.nextDouble()
-        println()
 
-
-        /*val cubic = Polynomial(a, b, c, d)
-        Polynomial.printRoots(cubic)*/
-
-        //solveRoots(a, b, c, d);
     }
 
     @JvmStatic

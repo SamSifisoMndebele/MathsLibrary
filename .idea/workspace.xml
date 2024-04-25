@@ -4,13 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb1c2d20-1211-48e2-b3b7-6c3dec8c0449" name="Changes" comment="beta-1.0.0">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/polynomial/Cubic.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/polynomial/Quadratic.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/polynomial/Quartic.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/util/Utils.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+    <list default="true" id="eb1c2d20-1211-48e2-b3b7-6c3dec8c0449" name="Changes" comment="beta-1.0.4425">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/expression/Expression.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/expression/ExpressionImpl.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/polynomial/PolynomialMain.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/polynomial/Cubic.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/polynomial/Cubic.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/polynomial/Quadratic.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/polynomial/Quadratic.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/polynomial/Quartic.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/polynomial/Quartic.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/terms/ExpTerm.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/terms/ExpTerm.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/terms/PolTerm.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/terms/PolTerm.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/terms/Term.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/terms/Term.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/util/Util.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/terms/PolTermTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/terms/PolTermTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,10 +63,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Kotlin Interface" />
         <option value="Kotlin Object" />
-        <option value="JUnit5 Test Class" />
         <option value="JUnit3 Test Class" />
+        <option value="JUnit5 Test Class" />
+        <option value="Kotlin Interface" />
         <option value="Kotlin Class" />
       </list>
     </option>
@@ -78,25 +85,31 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
     &quot;Gradle.Build MathsLib.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.MathsLib [jar].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.PTermTest.plus.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.PTermTest.testToString.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.PolTermTest.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.PolTermTest.minus.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.QuadraticTest.testSolveRoots.executor&quot;: &quot;Run&quot;,
     &quot;JAR Application.MathsLib-1.0-SNAPSHOT.jar.executor&quot;: &quot;Run&quot;,
     &quot;JAR Application.MathsLib-1.0.0-beta.jar.executor&quot;: &quot;Run&quot;,
     &quot;Kotlin.MainKt.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit3&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3&quot;: &quot;&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;jbr-17&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/IdeaProjects/MathsLib/src/main/kotlin/expression&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -109,6 +122,9 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IdeaProjects\MathsLib\src\main\kotlin\expression" />
+    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
@@ -116,14 +132,18 @@
       <recent name="D:\IdeaProjects\MathsLib\src\main\kotlin\util" />
       <recent name="D:\IdeaProjects\MathsLib\src\main\kotlin\polynomial" />
     </key>
+    <key name="CreateKotlinClassDialog.RecentsKey">
+      <recent name="expression" />
+    </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
       <recent name="terms" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="polynomial" />
       <recent name="terms" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.MathsLib [jar]">
+  <component name="RunManager" selected="Kotlin.MainKt">
     <configuration name="MathsLib [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -194,8 +214,41 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="QuadraticTest.testSolveRoots" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;polynomial.QuadraticTest.testSolveRoots&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ssmnd.MainKt" />
+      <module name="MathsLib.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.MainKt" />
+        <item itemvalue="Gradle.QuadraticTest.testSolveRoots" />
         <item itemvalue="Gradle.MathsLib [jar]" />
         <item itemvalue="Gradle.PolTermTest" />
         <item itemvalue="Gradle.PolTermTest.minus" />
@@ -218,7 +271,8 @@
       <option name="presentableId" value="Default" />
       <updated>1713992646755</updated>
       <workItem from="1713992646760" duration="16379000" />
-      <workItem from="1714064192210" duration="1853000" />
+      <workItem from="1714064192210" duration="7929000" />
+      <workItem from="1714085052770" duration="3570000" />
     </task>
     <task id="LOCAL-00001" summary="beta-1.0.0">
       <option name="closed" value="true" />
@@ -236,7 +290,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714010024178</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="beta-1.0.4425">
+      <option name="closed" value="true" />
+      <created>1714068646672</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1714068646672</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,6 +306,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="beta-1.0.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="beta-1.0.0" />
+    <MESSAGE value="beta-1.0.0.4425" />
+    <MESSAGE value="beta-1.0.4425" />
+    <option name="LAST_COMMIT_MESSAGE" value="beta-1.0.4425" />
   </component>
 </project>

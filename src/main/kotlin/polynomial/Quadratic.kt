@@ -1,29 +1,9 @@
-package polynomial
+package com.ssmnd.polynomial
 
 import utils.Utils
-import java.util.*
 import kotlin.math.sqrt
 
 object Quadratic {
-    @JvmStatic
-    fun main(args: Array<String>) {
-        val scanner = Scanner(System.`in`)
-
-        println("\nGiven a quadratic equation ax^2 + bx + c = 0, enter the values of a, b and c to calculate the roots.")
-        print("a = ")
-        val a = scanner.nextDouble()
-        print("b = ")
-        val b = scanner.nextDouble()
-        print("c = ")
-        val c = scanner.nextDouble()
-        println()
-
-
-        /*val quadratic = Polynomial(a, b, c)
-        Polynomial.Companion.printRoots(quadratic)*/
-
-        //solveRoots(a, b, c);
-    }
 
     fun solveRoots(a: Double, b: Double, c: Double) {
         val delta = (b * b - 4 * a * c) / (a * a)
@@ -31,8 +11,7 @@ object Quadratic {
         else solveImmRoots(delta, a, b)
     }
 
-    @JvmOverloads
-    fun solveRealRoots(delta: Double, a: Double, b: Double, label1: String = "x1", label2: String = "x2") {
+    private fun solveRealRoots(delta: Double, a: Double, b: Double, label1: String = "x1", label2: String = "x2") {
         println("Real roots:-")
         val x1 = (-b / a + sqrt(delta)) / 2
         val x2 = (-b / a - sqrt(delta)) / 2
@@ -46,7 +25,6 @@ object Quadratic {
         }
     }
 
-    @JvmOverloads
     fun solveImmRoots(delta: Double, a: Double, b: Double, label1: String? = "x1", label2: String? = "x2") {
         println("Non-real roots:- i^2 = -1")
         val alpha = (-b / a) / 2

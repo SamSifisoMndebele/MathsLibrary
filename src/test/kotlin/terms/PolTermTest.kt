@@ -1,14 +1,15 @@
 package terms
 
 import com.ssmnd.terms.PolTerm
-import org.junit.jupiter.api.Assertions.*
+import com.ssmnd.terms.PolTerm.Companion.polTermOf
+import org.junit.jupiter.api.Assertions.assertEquals
 import kotlin.test.Test
 
 class PolTermTest {
     private val term0 = PolTerm.ZERO
-    private val term1 = PolTerm(5)
-    private val term2 = PolTerm(3, 'x', 2)
-    private val term3 = PolTerm(-5, 'x', 2)
+    private val term1 = polTermOf(5)
+    private val term2 = polTermOf(3, 'x', 2)
+    private val term3 = polTermOf(-5, 'x', 2)
 
 
     @Test
@@ -21,7 +22,7 @@ class PolTermTest {
     @Test
     fun plus() {
         val expected = term2 + term3
-        val actual = PolTerm(-2, 'x' ,2)
+        val actual = polTermOf(-2, 'x' ,2)
         assertEquals(expected, actual, "Wrong Variables")
     }
 

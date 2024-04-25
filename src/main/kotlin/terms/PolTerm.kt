@@ -1,27 +1,45 @@
 package com.ssmnd.terms
 
-class PolTerm : Term {
-    override val coefficient: Double
-    val variables: Map<Char, Double>
-    constructor(coefficient: Double, variables: Map<Char, Double>) {
-        this.coefficient = coefficient
-        this.variables = if (coefficient != 0.0) variables else mapOf()
-    }
-    constructor(number: Number) : this(number.toDouble(), mapOf())
-    constructor(coefficient: Number, variable: Char) : this(coefficient.toDouble(), mapOf(variable to 1.0))
-    constructor(coefficient: Number, variable: Char, exponent: Number) : this(coefficient.toDouble(), mapOf(variable to exponent.toDouble()))
-    constructor(variables: Map<Char, Number>) : this(1.0, variables.mapValues { it.value.toDouble() })
+import kotlin.math.pow
+
+class PolTerm private constructor(override val coefficient: Double, variables: Map<Char, Double>) : Term {
+    val variables: Map<Char, Double> = if (coefficient != 0.0) variables else mapOf()
+
     companion object {
-        val ZERO = PolTerm(0)
-        val ONE = PolTerm(1)
-        fun Map<Char, Number>.string() : String {
+        val ZERO : Term = PolTerm(0.0, mapOf())
+        val ONE : Term = PolTerm(1.0, mapOf())
+        fun Map<Char, Number>.string(): String {
             var string = ""
             this.forEach { (char, exp) -> string += "$char^$exp" }
             return string
         }
+
+        fun polTermOf(number: Number) : Term = PolTerm(number.toDouble(), mapOf())
+        fun polTermOf(variable: Char) : Term = PolTerm(1.0, mapOf(variable to 1.0))
+        fun polTermOf(coefficient: Number, variable: Char) : Term = PolTerm(coefficient.toDouble(), mapOf(variable to 1.0))
+        fun polTermOf(coefficient: Number, variable: Char, exponent: Number) : Term = PolTerm(
+            coefficient.toDouble(),
+            mapOf(variable to exponent.toDouble())
+        )
+        fun polTermOf(variables: Map<Char, Number>) : Term = PolTerm(1.0, variables.mapValues { it.value.toDouble() })
     }
+    
+
     override fun toString(): String {
         return coefficient.toString() + variables.string()
+    }
+
+    override fun value(vararg vars: Pair<Char, Number>): Double {
+        var value = coefficient
+        val varsMap = mapOf(*vars).mapValues { it.value.toDouble() }
+        variables.forEach { (base, exponent) ->
+            value *= varsMap.getOrDefault(base, 0.0).pow(exponent)
+        }
+        return value
+    }
+
+    override fun derivative(n: Int): Term {
+        TODO("Not yet implemented")
     }
 
 
@@ -47,23 +65,5 @@ class PolTerm : Term {
     override fun div(term: Term): Term {
         //TODO("Not yet implemented")
         return PolTerm(this.coefficient / term.coefficient, this.variables)
-    }
-
-    override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        if (javaClass != other?.javaClass) return false
-
-        other as PolTerm
-
-        if (coefficient != other.coefficient) return false
-        if (variables != other.variables) return false
-
-        return true
-    }
-
-    override fun hashCode(): Int {
-        var result = coefficient.hashCode()
-        result = 31 * result + variables.hashCode()
-        return result
     }
 }

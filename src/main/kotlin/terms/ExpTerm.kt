@@ -1,26 +1,35 @@
 package com.ssmnd.terms
 
-class ExpTerm : Term {
-    override val coefficient: Double
-    val variables: Map<Double, Char>
-    constructor(coefficient: Double, variables: Map<Double, Char>) {
-        this.coefficient = coefficient
-        this.variables = if (coefficient != 0.0) variables.mapKeys { it.key } else mapOf()
-    }
-    constructor(number: Number) : this(number.toDouble(), mapOf())
-    constructor(coefficient: Number, base: Number, exponent: Char) : this(coefficient.toDouble(), mapOf(base.toDouble() to exponent))
-    constructor(variables: Map<Number, Char>) : this(1.0, variables.mapKeys { it.key.toDouble() })
+class ExpTerm(override val coefficient: Double, variables: Map<Double, Char>) : Term {
+    val variables: Map<Double, Char> = if (coefficient != 0.0) variables.mapKeys { it.key } else mapOf()
+
     companion object {
-        val ZERO = ExpTerm(0)
-        val ONE = ExpTerm(1)
-        fun Map<Double, Char>.string() : String {
+        val ZERO : Term = ExpTerm(0.0, mapOf())
+        val ONE : Term = ExpTerm(1.0, mapOf())
+        fun Map<Double, Char>.string(): String {
             var string = ""
             this.forEach { (char, exp) -> string += "$char^$exp" }
             return string
         }
+
+        fun expTermOf(number: Number) : Term = ExpTerm(number.toDouble(), mapOf())
+        fun expTermOf(coefficient: Number, base: Number, exponent: Char) : Term = ExpTerm(
+            coefficient.toDouble(),
+            mapOf(base.toDouble() to exponent)
+        )
+        fun expTermOf(variables: Map<Number, Char>) : Term = ExpTerm(1.0, variables.mapKeys { it.key.toDouble() })
     }
+
     override fun toString(): String {
         return coefficient.toString() + variables.string()
+    }
+
+    override fun value(vararg vars: Pair<Char, Number>): Double {
+        TODO("Not yet implemented")
+    }
+
+    override fun derivative(n: Int): Term {
+        TODO("Not yet implemented")
     }
 
 
@@ -46,24 +55,6 @@ class ExpTerm : Term {
     override fun div(term: Term): Term {
         //TODO("Not yet implemented")
         return ExpTerm(this.coefficient / term.coefficient, this.variables)
-    }
-
-    override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        if (javaClass != other?.javaClass) return false
-
-        other as ExpTerm
-
-        if (coefficient != other.coefficient) return false
-        if (variables != other.variables) return false
-
-        return true
-    }
-
-    override fun hashCode(): Int {
-        var result = coefficient.hashCode()
-        result = 31 * result + variables.hashCode()
-        return result
     }
 
 }
