@@ -4,20 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb1c2d20-1211-48e2-b3b7-6c3dec8c0449" name="Changes" comment="beta-1.0.4425">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/expression/Expression.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/expression/ExpressionImpl.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/polynomial/PolynomialMain.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/polynomial/Cubic.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/polynomial/Cubic.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/polynomial/Quadratic.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/polynomial/Quadratic.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/polynomial/Quartic.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/polynomial/Quartic.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/terms/ExpTerm.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/terms/ExpTerm.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/terms/PolTerm.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/terms/PolTerm.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/terms/Term.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/terms/Term.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/util/Util.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/terms/PolTermTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/terms/PolTermTest.kt" afterDir="false" />
+    <list default="true" id="eb1c2d20-1211-48e2-b3b7-6c3dec8c0449" name="Changes" comment="beta-1.0.4426">
+      <change beforePath="$PROJECT_DIR$/lib/apiguardian-api-1.1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/junit-jupiter-5.8.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/junit-jupiter-api-5.8.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/junit-jupiter-engine-5.8.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/junit-jupiter-params-5.8.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/junit-platform-commons-1.8.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/junit-platform-engine-1.8.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/opentest4j-1.2.0.jar" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +138,7 @@
       <recent name="terms" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.MainKt">
+  <component name="RunManager" selected="Gradle.MathsLib [jar]">
     <configuration name="MathsLib [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -247,9 +242,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.MathsLib [jar]" />
         <item itemvalue="Kotlin.MainKt" />
         <item itemvalue="Gradle.QuadraticTest.testSolveRoots" />
-        <item itemvalue="Gradle.MathsLib [jar]" />
         <item itemvalue="Gradle.PolTermTest" />
         <item itemvalue="Gradle.PolTermTest.minus" />
       </list>
@@ -272,7 +267,7 @@
       <updated>1713992646755</updated>
       <workItem from="1713992646760" duration="16379000" />
       <workItem from="1714064192210" duration="7929000" />
-      <workItem from="1714085052770" duration="3570000" />
+      <workItem from="1714085052770" duration="4415000" />
     </task>
     <task id="LOCAL-00001" summary="beta-1.0.0">
       <option name="closed" value="true" />
@@ -298,16 +293,31 @@
       <option name="project" value="LOCAL" />
       <updated>1714068646672</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="beta-1.0.4426">
+      <option name="closed" value="true" />
+      <created>1714089246465</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1714089246465</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UpdateCopyrightCheckinHandler">
+    <option name="UPDATE_COPYRIGHT" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="beta-1.0.0" />
     <MESSAGE value="beta-1.0.0.4425" />
     <MESSAGE value="beta-1.0.4425" />
-    <option name="LAST_COMMIT_MESSAGE" value="beta-1.0.4425" />
+    <MESSAGE value="beta-1.0.4426" />
+    <option name="LAST_COMMIT_MESSAGE" value="beta-1.0.4426" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
