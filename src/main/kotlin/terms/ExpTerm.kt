@@ -1,5 +1,7 @@
 package com.ssmnd.terms
 
+import com.ssmnd.util.Latex
+
 class ExpTerm(override val coefficient: Double, variables: Map<Double, Char>) : Term {
     val variables: Map<Double, Char> = if (coefficient != 0.0) variables.mapKeys { it.key } else mapOf()
 
@@ -22,6 +24,10 @@ class ExpTerm(override val coefficient: Double, variables: Map<Double, Char>) : 
 
     override fun toString(): String {
         return coefficient.toString() + variables.string()
+    }
+
+    override fun toLatex(): Latex {
+        TODO("Not yet implemented")
     }
 
     override fun value(vararg vars: Pair<Char, Number>): Double {

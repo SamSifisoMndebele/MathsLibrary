@@ -1,9 +1,10 @@
-package com.ssmnd.terms
+package com.ssmnd.term
 
 import com.ssmnd.util.Latex
 
-interface Term {
+interface Term<V> {
     val coefficient: Double
+    val variables: Set<V>
 
     /**
      * String representation of the term.
@@ -23,20 +24,20 @@ interface Term {
      * @return [Double]: The value of the variable.
      */
     fun value(vararg vars: Pair<Char, Number>): Double
-    fun derivative(n: Int): Term
+    fun derivative(n: Int): Term<V>
 
     /**
      * Returns the positive of this value.
-     * @return [Term]
+     * @return [Term<V>]
      */
-    operator fun unaryPlus(): Term = this
+    operator fun unaryPlus(): Term<V> = this
     @Throws(ArithmeticException::class)
-    operator fun plus(term: Term): Term
+    operator fun plus(term: Term<V>): Term<V>
 
     @Throws(ArithmeticException::class)
-    operator fun minus(term: Term): Term
-    operator fun times(term: Term): Term
-    operator fun div(term: Term): Term
+    operator fun minus(term: Term<V>): Term<V>
+    operator fun times(term: Term<V>): Term<V>
+    operator fun div(term: Term<V>): Term<V>
 
 //    override fun equals(other: Any?): Boolean
 //    override fun hashCode(): Int

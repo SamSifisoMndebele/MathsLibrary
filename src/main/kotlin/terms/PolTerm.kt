@@ -1,5 +1,6 @@
 package com.ssmnd.terms
 
+import com.ssmnd.util.Latex
 import kotlin.math.pow
 
 class PolTerm private constructor(override val coefficient: Double, variables: Map<Char, Double>) : Term {
@@ -27,6 +28,10 @@ class PolTerm private constructor(override val coefficient: Double, variables: M
 
     override fun toString(): String {
         return coefficient.toString() + variables.string()
+    }
+
+    override fun toLatex(): Latex {
+        TODO("Not yet implemented")
     }
 
     override fun value(vararg vars: Pair<Char, Number>): Double {
