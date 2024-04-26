@@ -3,7 +3,7 @@ package com.ssmnd
 import com.ssmnd.expression.ExpressionImpl.Companion.expressionOf
 import com.ssmnd.terms.PolTerm.Companion.polTermOf
 
-fun main() {
+private fun main() {
     val e1 = expressionOf(
         polTermOf(-1),
         polTermOf('x'),
