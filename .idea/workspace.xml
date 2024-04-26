@@ -5,18 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb1c2d20-1211-48e2-b3b7-6c3dec8c0449" name="Changes" comment="beta-1.0.4426">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/term/ExponentialTerm.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/term/PolynomialTerm.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/term/Term.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/util/Latex.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/variable/ExponentialVariable.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/variable/PolynomialVariable.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/variable/Variable.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/term/TermImpl.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/terms/ExpTerm.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/terms/ExpTerm.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/terms/PolTerm.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/terms/PolTerm.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/terms/Term.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/terms/Term.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/term/ExponentialTerm.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/term/ExponentialTerm.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/term/PolynomialTerm.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/term/PolynomialTerm.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,6 +140,7 @@
       <recent name="D:\IdeaProjects\MathsLib\src\main\kotlin\polynomial" />
     </key>
     <key name="CreateKotlinClassDialog.RecentsKey">
+      <recent name="term" />
       <recent name="expression" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
@@ -291,7 +284,7 @@
       <workItem from="1714085052770" duration="4616000" />
       <workItem from="1714089709432" duration="1557000" />
       <workItem from="1714118801023" duration="182000" />
-      <workItem from="1714119063974" duration="9764000" />
+      <workItem from="1714119063974" duration="13383000" />
     </task>
     <task id="LOCAL-00001" summary="beta-1.0.0">
       <option name="closed" value="true" />
@@ -349,7 +342,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714090660269</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="beta-1.0.4426">
+      <option name="closed" value="true" />
+      <created>1714129359857</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1714129359857</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

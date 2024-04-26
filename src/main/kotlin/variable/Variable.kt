@@ -22,6 +22,8 @@ interface Variable<B, E> : Comparable<Variable<B, E>>{
      */
     fun toLatex(): Latex
 
+    fun  abc() : Int
+
     /**
      * Returns the value of the variable.
      * @param value variable value, 0.0 by default.

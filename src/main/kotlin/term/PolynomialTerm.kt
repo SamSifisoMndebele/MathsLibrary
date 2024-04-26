@@ -50,19 +50,27 @@ class PolynomialTerm(override val coefficient: Double, override val variables: S
     }
 
     override fun div(term: Term<PolynomialVariable>): Term<PolynomialVariable> {
-        TODO("Not yet implemented")
+        //TODO("Not yet implemented")
+        return PolynomialTerm(this.coefficient / term.coefficient, this.variables)
     }
 
     override fun times(term: Term<PolynomialVariable>): Term<PolynomialVariable> {
-        TODO("Not yet implemented")
+        //TODO("Not yet implemented")
+        return PolynomialTerm(this.coefficient * term.coefficient, this.variables)
     }
 
     override fun minus(term: Term<PolynomialVariable>): Term<PolynomialVariable> {
-        TODO("Not yet implemented")
+        if (term !is PolynomialTerm || this.variables != term.variables)
+            throw ArithmeticException("$this is not a like term of $term")
+
+        return PolynomialTerm(this.coefficient - term.coefficient, this.variables)
     }
 
     override fun plus(term: Term<PolynomialVariable>): Term<PolynomialVariable> {
-        TODO("Not yet implemented")
+        if (term !is PolynomialTerm || this.variables != term.variables)
+            throw ArithmeticException("$this is not a like term of $term")
+
+        return PolynomialTerm(this.coefficient + term.coefficient, this.variables)
     }
 
 }

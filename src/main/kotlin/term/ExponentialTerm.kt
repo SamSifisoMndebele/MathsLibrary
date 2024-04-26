@@ -32,19 +32,27 @@ class ExponentialTerm(override val coefficient: Double, override val variables: 
     }
 
     override fun div(term: Term<ExponentialVariable>): Term<ExponentialVariable> {
-        TODO("Not yet implemented")
+        //TODO("Not yet implemented")
+        return ExponentialTerm(this.coefficient / term.coefficient, this.variables)
     }
 
     override fun times(term: Term<ExponentialVariable>): Term<ExponentialVariable> {
-        TODO("Not yet implemented")
+        //TODO("Not yet implemented")
+        return ExponentialTerm(this.coefficient * term.coefficient, this.variables)
     }
 
     override fun minus(term: Term<ExponentialVariable>): Term<ExponentialVariable> {
-        TODO("Not yet implemented")
+        if (term !is ExponentialTerm || this.variables != term.variables)
+            throw ArithmeticException("$this is not a like term of $term")
+
+        return ExponentialTerm(this.coefficient - term.coefficient, this.variables)
     }
 
     override fun plus(term: Term<ExponentialVariable>): Term<ExponentialVariable> {
-        TODO("Not yet implemented")
+        if (term !is ExponentialTerm || this.variables != term.variables)
+            throw ArithmeticException("$this is not a like term of $term")
+
+        return ExponentialTerm(this.coefficient + term.coefficient, this.variables)
     }
 
 }
