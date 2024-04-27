@@ -1,6 +1,9 @@
 package com.ssmnd.variable
 
+import com.ssmnd.term.ExponentialTerm
+import com.ssmnd.term.Term
 import com.ssmnd.util.Latex
+import kotlin.math.ln
 import kotlin.math.pow
 
 /**
@@ -8,14 +11,8 @@ import kotlin.math.pow
  * All exponential variables, such as `2^n`, are
  * implemented as instances of this class.
  */
-class ExponentialVariable(override var base: Double, override var exponent: Char) : Variable<Double, Char> {
-    companion object {
-        fun exponentialVariable(base: Number, exponent: Char) = ExponentialVariable(base.toDouble(), exponent)
-    }
-    override fun compareTo(other: Variable<Double, Char>): Int {
-        //TODO("Not yet implemented")
-        return this.toString().compareTo(other.toString())
-    }
+class ExponentialVariable(override var base: Double, override var exponent: Char) : Variable {
+    constructor(base: Number, exponent: Char) : this(base.toDouble(), exponent)
 
     override fun toString(): String {
         if (base == 0.0) return "0"
@@ -27,32 +24,39 @@ class ExponentialVariable(override var base: Double, override var exponent: Char
         return Latex(this)
     }
 
-    override fun value(value: Number): Double {
-        //TODO("Not yet implemented")
-        return base.pow(value.toDouble())
+    override fun value(x: Number): Double {
+        return base.pow(x.toDouble())
     }
 
-    override fun pow(n: Double): Variable<Double, Char> {
-        TODO("Not yet implemented")
+    @Deprecated("This method may throw runtime errors.", ReplaceWith("set(base.toDouble(), value.toChar())"))
+    override fun set(base: Any, value: Any) {
+        set(base.toString().toDouble(), value.toString()[0])
     }
 
-    override fun derivative(n: Int): Variable<Double, Char> {
-        TODO("Not yet implemented")
+    override fun pow(n: Double): Variable {
+        return ExponentialVariable(base.pow(n), exponent)
     }
 
-    override fun div(variable: Variable<Double, Char>): Variable<Double, Char> {
+    override fun derivative(n: Int): Term {
+        return ExponentialTerm(ln(base).pow(n), base, exponent)
+    }
+
+    override fun div(variable: Variable): Variable {
         //TODO("Not yet implemented")
         if (variable !is ExponentialVariable || exponent != variable.exponent) throw IllegalArgumentException("$variable is not a like variable if $this")
         return ExponentialVariable(base / variable.base, exponent)
     }
 
-    override fun times(variable: Variable<Double, Char>): Variable<Double, Char> {
+    override fun times(variable: Variable): Variable {
         //TODO("Not yet implemented")
         if (variable !is ExponentialVariable || exponent != variable.exponent) throw IllegalArgumentException("$variable is not a like variable if $this")
         return ExponentialVariable(base * variable.base, exponent)
     }
 
-    override fun set(base: Double, value: Char) {
+    /**
+     * Set the variable base and exponent.
+     */
+    operator fun set(base: Double, value: Char) {
         this.base = base
         this.exponent = value
     }

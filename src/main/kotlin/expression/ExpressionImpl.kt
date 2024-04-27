@@ -1,10 +1,7 @@
 package com.ssmnd.expression
 
-import com.ssmnd.terms.ExpTerm
-import com.ssmnd.terms.Term
-
-class ExpressionImpl private constructor(terms: Array<Term>) : Expression {
-    override val terms: Array<Term> = terms.ifEmpty { arrayOf(ExpTerm.ZERO) }
+class ExpressionImpl private constructor(terms: Array<Int>)  {
+    /*override val terms: Array<Term> = terms.ifEmpty { arrayOf(ExpTerm.ZERO) }
 
     override fun toString(): String {
         val string = StringBuilder()
@@ -25,31 +22,6 @@ class ExpressionImpl private constructor(terms: Array<Term>) : Expression {
             value += term.value(*vars)
         }
         return value
-    }
+    }*/
 
-    override fun derivative(n: Int): Expression {
-        TODO("Not yet implemented")
-    }
-
-    override fun plus(expression: Expression): Expression {
-        TODO("Not yet implemented")
-    }
-
-    override fun minus(expression: Expression): Expression {
-        TODO("Not yet implemented")
-    }
-
-    override fun times(expression: Expression): Expression {
-        TODO("Not yet implemented")
-    }
-
-    override fun div(expression: Expression): Expression {
-        TODO("Not yet implemented")
-    }
-
-    companion object {
-        fun expressionOf(vararg terms : Term) : Expression {
-            return ExpressionImpl(arrayOf(*terms))
-        }
-    }
 }

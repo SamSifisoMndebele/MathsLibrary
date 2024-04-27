@@ -16,6 +16,10 @@ class Latex : CharSequence {
     constructor(latex: String) {
         this.string = latex
     }
+    constructor(number: Number) {
+        //TODO("Not yet implemented"
+        string =number.toString()
+    }
     constructor(variable: ExponentialVariable) {
         string = when (variable.base) {
             0.0 -> "0"
@@ -70,5 +74,9 @@ class Latex : CharSequence {
     companion object {
         val ZERO = Latex("0")
         val ONE = Latex("1")
+        val NEGATIVE_ONE = Latex("-1")
+        val NaN = Latex("NaN")
+        val POSITIVE_INFINITY = Latex("+\\infty")
+        val NEGATIVE_INFINITY = Latex("-\\infty")
     }
 }

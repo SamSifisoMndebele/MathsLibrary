@@ -1,5 +1,6 @@
 package com.ssmnd.variable
 
+import com.ssmnd.term.Term
 import com.ssmnd.util.Latex
 
 /**
@@ -7,14 +8,23 @@ import com.ssmnd.util.Latex
  * All mathematical variables, such as `x, y^2, x^y or 2^n`, are
  * implemented as instances of this class.
  */
-interface Variable<B, E> : Comparable<Variable<B, E>>{
-    val base: B
-    val exponent: E
+interface Variable : Comparable<Variable> {
+    /**
+     * The base of the variable
+     */
+    val base: Any
+    /**
+     * The exponent of the variable
+     */
+    val exponent: Any
     /**
      * String representation of the variable.
      * @return [String]
      */
     override fun toString(): String
+
+    val comparableString : String
+    override fun compareTo(other: Variable): Int = comparableString.compareTo(other.comparableString)
 
     /**
      * Latex representation of the variable.
@@ -22,22 +32,22 @@ interface Variable<B, E> : Comparable<Variable<B, E>>{
      */
     fun toLatex(): Latex
 
-    fun  abc() : Int
-
     /**
      * Returns the value of the variable.
-     * @param value variable value, 0.0 by default.
+     * @param x variable value, 0.0 by default.
      * @return [Double]
      */
-    infix fun value(value: Number) : Double
+    infix fun value(x: Number) : Double
 
-    operator fun set(base: B, value: E)
+    @Deprecated("This method may throw runtime errors.")
+    @Throws(NumberFormatException::class)
+    operator fun set(base: Any, value: Any)
 
     /**
      * Returns the positive of this value.
      * @return [Variable]
      */
-    operator fun unaryPlus(): Variable<B, E> = this
+    operator fun unaryPlus(): Variable = this
 
     /**
      * Multiplies this variable by the other variable.
@@ -46,7 +56,7 @@ interface Variable<B, E> : Comparable<Variable<B, E>>{
      * @throws [ArithmeticException] If this variable is not the same as other variable
      */
     @Throws(ArithmeticException::class)
-    operator fun times(variable: Variable<B, E>): Variable<B, E>
+    operator fun times(variable: Variable): Variable
 
     /**
      * Divides this variable by the other variable.
@@ -55,22 +65,21 @@ interface Variable<B, E> : Comparable<Variable<B, E>>{
      * @throws [ArithmeticException] If this variable is not the same as other variable
      */
     @Throws(ArithmeticException::class)
-    operator fun div(variable: Variable<B, E>): Variable<B, E>
+    operator fun div(variable: Variable): Variable
 
     /**
      * Returns this variable to the power of the value `n`.
      * @param n exponent.
      * @return [Variable]
      */
-    infix fun pow(n: Double): Variable<B, E>
+    infix fun pow(n: Double): Variable
 
     /**
      * Returns the derivative of this variable.
      * @param n the degree if the derivative. `e.g n = 1 for first derivative, n = 2 for second derivative.`
-     * @return [Variable]
+     * @return [Term]
      */
-    infix fun derivative(n: Int): Variable<B, E>
-
+    infix fun derivative(n: Int): Term
 
 
 //    override fun equals(other: Any?): Boolean
