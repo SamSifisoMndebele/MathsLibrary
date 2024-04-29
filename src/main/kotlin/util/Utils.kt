@@ -4,6 +4,7 @@ import com.ssmnd.utils.toFraction
 import kotlin.math.min
 import kotlin.math.pow
 
+@Deprecated("Dont use this.", level = DeprecationLevel.ERROR)
 object Utils {
     fun toScientific(number: Double, decimals: Int): SciAns {
         val isNegative = number < 0
@@ -47,20 +48,6 @@ object Utils {
     }
 
     @JvmStatic
-    fun toFractionString(decimalNumber: Double): String {
-        val fraction = decimalNumber.toFraction()
-
-        val numerator = fraction.numerator.toString()
-        if (fraction.denominator.toDouble() == 1.0) {
-            return numerator
-        } else {
-            val denominator = fraction.denominator.toString()
-            if (numerator.length > 4 || denominator.length > 4) {
-                return fraction.decimalNumber.toString()
-            }
-            return fraction.numerator.toString() + "/" + fraction.denominator
-        }
-    }
 
     fun toFractionLatex(decimalNumber: Double): String {
         var fraction = decimalNumber.toFraction()

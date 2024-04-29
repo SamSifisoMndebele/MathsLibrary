@@ -1,6 +1,6 @@
-package com.ssmnd.polynomial
+package com.ssmnd.polynomials
 
-import com.ssmnd.util.Utils
+import com.ssmnd.utils.toFracString
 import kotlin.math.sqrt
 
 object Quadratic {
@@ -31,11 +31,11 @@ object Quadratic {
         val beta = sqrt(-delta) / 2
 
         if (alpha == 0.0) {
-            println("$label1 = -${Utils.toFractionString(beta)}i")
-            println("$label2 = ${Utils.toFractionString(beta)}i")
+            println("$label1 = -${beta.toFracString()}i")
+            println("$label2 = ${beta.toFracString()}i")
         } else {
-            println("$label1 = ${Utils.toFractionString(alpha)} - ${Utils.toFractionString(beta)}i")
-            println("$label1 = ${Utils.toFractionString(alpha)} + ${Utils.toFractionString(beta)}i")
+            println("$label1 = ${alpha.toFracString()} - ${alpha.toFracString()}i")
+            println("$label1 = ${alpha.toFracString()} + ${alpha.toFracString()}i")
         }
     }
 }

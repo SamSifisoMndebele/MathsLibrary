@@ -1,4 +1,4 @@
-package com.ssmnd.polynomial
+package com.ssmnd.polynomials
 
 import kotlin.math.*
 

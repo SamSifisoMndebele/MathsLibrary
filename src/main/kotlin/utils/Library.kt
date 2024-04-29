@@ -95,3 +95,17 @@ fun Number.toFraction(): Fraction {
 
     return Fraction((if (isNegative) -numerator else numerator).toLong(), denominator.toLong(), doubleNumber)
 }
+fun Number.toFracString(): String {
+    val fraction = this.toFraction()
+
+    val numerator = fraction.numerator.toString()
+    if (fraction.denominator.toDouble() == 1.0) {
+        return numerator
+    } else {
+        val denominator = fraction.denominator.toString()
+        if (numerator.length > 4 || denominator.length > 4) {
+            return fraction.decimalNumber.toString()
+        }
+        return fraction.numerator.toString() + "/" + fraction.denominator
+    }
+}

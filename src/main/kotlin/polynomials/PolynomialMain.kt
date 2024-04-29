@@ -1,8 +1,8 @@
-package com.ssmnd.polynomial
+package com.ssmnd.polynomials
 
 import java.util.*
 
-fun main() {
+private fun main() {
     println("""
         A : Quadratic
         B : Cubic
