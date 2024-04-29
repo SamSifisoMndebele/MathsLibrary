@@ -1,14 +1,10 @@
-package utils
+package com.ssmnd.util
 
-import org.jetbrains.annotations.Contract
-import java.text.NumberFormat
-import kotlin.math.abs
-import kotlin.math.floor
+import com.ssmnd.utils.toFraction
 import kotlin.math.min
 import kotlin.math.pow
 
 object Utils {
-    @Contract("_, _ -> new")
     fun toScientific(number: Double, decimals: Int): SciAns {
         val isNegative = number < 0
 
@@ -50,50 +46,9 @@ object Utils {
         return SciAns(string1, string2, string2.toDouble())
     }
 
-    fun fixTo(number: Double, decimals: Int): String {
-        val numberFormat = NumberFormat.getInstance()
-        numberFormat.maximumFractionDigits = decimals
-        numberFormat.minimumFractionDigits = decimals
-        return numberFormat.format(number).replace(',', '.')
-    }
-
-    fun roundTo(number: Double, decimals: Int): String {
-        val numberFormat = NumberFormat.getInstance()
-        numberFormat.maximumFractionDigits = decimals
-        return numberFormat.format(number).replace(',', '.')
-    }
-
-    fun toFraction(doubleNumber: Double): Fraction {
-        val tolerance = 5.0E-13
-
-        val isNegative = doubleNumber < 0
-
-        val decimalNumber = if (isNegative) -doubleNumber else doubleNumber
-
-        var numerator = 1.0
-        var num = 0.0
-        var denominator = 0.0
-        var den = 1.0
-        var number = decimalNumber
-        do {
-            val numberFloor = floor(number)
-
-            var temp = numerator
-            numerator = numberFloor * numerator + num
-            num = temp
-
-            temp = denominator
-            denominator = numberFloor * denominator + den
-            den = temp
-            number = 1 / (number - numberFloor)
-        } while (abs(decimalNumber - numerator / denominator) > decimalNumber * tolerance)
-
-        return Fraction((if (isNegative) -numerator else numerator).toLong(), denominator.toLong(), doubleNumber)
-    }
-
     @JvmStatic
     fun toFractionString(decimalNumber: Double): String {
-        val fraction = toFraction(decimalNumber)
+        val fraction = decimalNumber.toFraction()
 
         val numerator = fraction.numerator.toString()
         if (fraction.denominator.toDouble() == 1.0) {
@@ -108,9 +63,9 @@ object Utils {
     }
 
     fun toFractionLatex(decimalNumber: Double): String {
-        var fraction = toFraction(decimalNumber)
+        var fraction = decimalNumber.toFraction()
         val isNegative = fraction.isNegative
-        if (isNegative) fraction = fraction.negate()
+        if (isNegative) fraction = fraction.negate
 
         val latex = StringBuilder()
         if (isNegative) latex.append('-')
@@ -128,68 +83,7 @@ object Utils {
     }
 
     data class SciAns(val text: String, val textE: String, val number: Double)
-    class Fraction(numerator: Long, denominator: Long, val decimalNumber: Double) {
-        @Contract(" -> new")
-        fun negate(): Fraction {
-            return if (denominator > 0) Fraction(-numerator, denominator, -decimalNumber)
-            else Fraction(numerator, -denominator, -decimalNumber)
-        }
 
-        val isNegative: Boolean
-            get() = (numerator < 0 && denominator > 0
-                    || numerator > 0 && denominator < 0)
-        val isPositive: Boolean
-            get() = numerator > 0 && denominator > 0
-        val isZero: Boolean
-            get() = numerator == 0L
-        val isNaN: Boolean
-            get() = numerator == 0L && denominator == 0L || java.lang.Double.isNaN(decimalNumber)
-        val numerator: Long
-        val denominator: Long
-
-        init {
-            var numerator = numerator
-            var denominator = denominator
-            if (denominator < 0) {
-                numerator = -numerator
-                denominator = -denominator
-            }
-            this.numerator = numerator
-            this.denominator = denominator
-        }
-
-        companion object {
-            @Contract("_, _ -> new")
-            fun of(numerator: Long, denominator: Long): Fraction {
-                return Fraction(numerator, denominator, numerator.toDouble() / denominator)
-            }
-
-            @Contract("_, _ -> new")
-            fun of(numerator: Int, denominator: Int): Fraction {
-                return simply(Fraction(numerator.toLong(), denominator.toLong(), numerator.toDouble() / denominator))
-            }
-
-            @Contract("_ -> new")
-            fun of(decimalNumber: Double): Fraction {
-                return toFraction(decimalNumber)
-            }
-
-            @Contract(value = "_ -> new", pure = true)
-            private fun simply(fraction: Fraction): Fraction {
-                val numerator = fraction.numerator
-                val denominator = fraction.denominator
-                var hcf: Long = 0
-
-                var i: Long = 1
-                while (i <= numerator || i <= denominator) {
-                    if (numerator % i == 0L && denominator % i == 0L) hcf = i
-                    i++
-                }
-
-                return Fraction(numerator / hcf, denominator / hcf, fraction.decimalNumber)
-            }
-        }
-    }
 
     private fun String.removePlusOnStart() : String {
         var equationString = this

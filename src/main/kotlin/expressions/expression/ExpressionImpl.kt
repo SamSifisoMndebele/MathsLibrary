@@ -1,4 +1,4 @@
-package com.ssmnd.expression
+package com.ssmnd.expressions.expression
 
 class ExpressionImpl private constructor(terms: Array<Int>)  {
     /*override val terms: Array<Term> = terms.ifEmpty { arrayOf(ExpTerm.ZERO) }

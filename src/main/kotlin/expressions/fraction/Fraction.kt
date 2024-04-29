@@ -1,11 +1,15 @@
-package com.ssmnd.fraction
+package com.ssmnd.expressions.fraction
 
-import com.ssmnd.expression.Expression
-import com.ssmnd.term.Term
+import com.ssmnd.expressions.expression.Expression
+import com.ssmnd.expressions.term.Term
 
-interface Fraction {
+interface Fraction : Comparable<Fraction> {
     val numerator: Expression
     val denominator: Expression
+
+
+    val comparableString : String
+    override fun compareTo(other: Fraction): Int = other.comparableString.compareTo(comparableString)
 
     /**
      * Checks if the expression is equals to One.

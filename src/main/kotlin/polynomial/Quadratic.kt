@@ -1,6 +1,6 @@
 package com.ssmnd.polynomial
 
-import utils.Utils
+import com.ssmnd.util.Utils
 import kotlin.math.sqrt
 
 object Quadratic {

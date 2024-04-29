@@ -1,14 +1,18 @@
-package com.ssmnd.expression
+package com.ssmnd.expressions.expression
 
-import com.ssmnd.term.Term
-import com.ssmnd.variable.Variable
+import com.ssmnd.expressions.term.Term
 
-interface Expression {
+
+interface Expression : Comparable<Expression> {
     /**
      * The sorted set of [Term] in the expression.
      * @return The sorted set of terms
      */
     val terms: Array<Term>
+
+
+    val comparableString : String
+    override fun compareTo(other: Expression): Int = other.comparableString.compareTo(comparableString)
 
     /**
      * String representation of the term.
