@@ -2,6 +2,7 @@ package com.ssmnd
 
 import com.ssmnd.expressions.term.TermImpl
 import com.ssmnd.expressions.variable.Variable.Companion.variableOf
+import com.ssmnd.utils.Latex
 
 private fun main() {
 
@@ -25,17 +26,19 @@ private fun main() {
 
     val term = TermImpl(-2.0, setOf(variableNum, variableNum2, variableExp, variablePol, variablePol2, variable))
 
-    println(variableNum)
-    println(variableNum2)
-    println(variablePol)
-    println(variablePol2)
-    println(variableExp)
-    println(variable)
-    println()
-    println(term.toLatex())
+//    println(variableNum)
+//    println(variableNum2)
+//    println(variablePol)
+//    println(variablePol2)
+//    println(variableExp)
+//    println(variable)
+//    println()
+//    println(term.toLatex())
 
-    variable.value(2, 3)
+    println(variable.value(2, 3))
 
+    println(term.toLatex().pow(Latex.THETA, false))
 
+    println(Latex.partialDer(term.toLatex(), 3))
 
 }
