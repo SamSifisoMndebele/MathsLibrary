@@ -1,6 +1,9 @@
 package com.ssmnd.expressions.expression
 
-class ExpressionImpl private constructor(terms: Array<Int>)  {
+import com.ssmnd.expressions.term.Term
+
+class ExpressionImpl(override val terms: Array<Term>) : Expression  {
+    constructor(term: Term) : this(arrayOf(term))
     /*override val terms: Array<Term> = terms.ifEmpty { arrayOf(ExpTerm.ZERO) }
 
     override fun toString(): String {
@@ -23,5 +26,72 @@ class ExpressionImpl private constructor(terms: Array<Int>)  {
         }
         return value
     }*/
+
+    override val comparableString: String
+        get() = TODO("Not yet implemented")
+
+    override fun toString(): String {
+        TODO("Not yet implemented")
+    }
+
+    override fun partialDerivative(x: Char, n: Int): Expression {
+        TODO("Not yet implemented")
+    }
+
+    override fun derivative(n: Int): Expression {
+        TODO("Not yet implemented")
+    }
+
+    override fun unaryMinus(): Expression {
+        TODO("Not yet implemented")
+    }
+
+    override fun inc(): Expression {
+        TODO("Not yet implemented")
+    }
+
+    override fun dec(): Expression {
+        TODO("Not yet implemented")
+    }
+
+    override fun plus(number: Number): Expression {
+        TODO("Not yet implemented")
+    }
+
+    override fun plus(term: Term): Expression {
+        TODO("Not yet implemented")
+    }
+
+    override fun plus(expression: Expression): Expression {
+        TODO("Not yet implemented")
+    }
+
+    override fun minus(number: Number): Expression {
+        TODO("Not yet implemented")
+    }
+
+    override fun minus(term: Term): Expression {
+        TODO("Not yet implemented")
+    }
+
+    override fun minus(expression: Expression): Expression {
+        TODO("Not yet implemented")
+    }
+
+    override fun times(number: Number): Expression {
+        TODO("Not yet implemented")
+    }
+
+    override fun times(term: Term): Expression {
+        TODO("Not yet implemented")
+    }
+
+    override fun div(number: Number): Expression {
+        TODO("Not yet implemented")
+    }
+
+    override fun div(term: Term): Expression {
+        TODO("Not yet implemented")
+    }
 
 }

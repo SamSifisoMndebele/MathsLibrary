@@ -228,6 +228,16 @@ interface Term : Comparable<Term> {
          */
         val POSITIVE_INFINITY: Term = TermImpl(Double.POSITIVE_INFINITY, setOf())
 
+        /**
+         * A constant holding the zero value of Term.
+         */
+        val ZERO: Term = TermImpl(0.0, setOf())
+
+        /**
+         * A constant holding the one value of Term.
+         */
+        val ONE: Term = TermImpl(1.0, setOf())
+
         fun termOf(number: Number) : Term = TermImpl(number.toDouble(), setOf())
         fun termOf(number: Number, variables: Set<Variable>) : Term = TermImpl(number.toDouble(), variables)
         fun termOf(number: Number, vararg variables: Variable) : Term = TermImpl(number.toDouble(), setOf(*variables))

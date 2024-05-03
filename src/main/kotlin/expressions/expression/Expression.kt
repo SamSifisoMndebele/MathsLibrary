@@ -257,4 +257,31 @@ interface Expression : Comparable<Expression> {
 
 //    override fun equals(other: Any?): Boolean
 //    override fun hashCode(): Int
+
+    companion object {
+        /**
+         * A constant holding the "not a number" value of Term.
+         * */
+        val NaN: Expression = ExpressionImpl(arrayOf(Term.NaN))
+
+        /**
+         * A constant holding the negative infinity value of Expression.
+         */
+        val NEGATIVE_INFINITY: Expression = ExpressionImpl(arrayOf(Term.NEGATIVE_INFINITY))
+
+        /**
+         * A constant holding the positive infinity value of Expression.
+         */
+        val POSITIVE_INFINITY: Expression = ExpressionImpl(arrayOf(Term.POSITIVE_INFINITY))
+
+        /**
+         * A constant holding the zero value of Expression.
+         */
+        val ZERO: Expression = ExpressionImpl(arrayOf(Term.ZERO))
+
+        /**
+         * A constant holding the one value of Expression.
+         */
+        val ONE: Expression = ExpressionImpl(arrayOf(Term.ONE))
+    }
 }

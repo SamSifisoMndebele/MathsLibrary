@@ -11,6 +11,7 @@ repositories {
 }
 
 dependencies {
+    implementation(group="org.tensorflow", name="tensorflow-core-platform", version="0.3.3")
     //implementation("com.google.code.gson:gson:2.10.1")
     //testImplementation("org.jetbrains.kotlin:kotlin-test")
     //testImplementation("junit:junit:3.8.2")

@@ -208,7 +208,7 @@ y &= (x-1)(x+1)\\
         fun fraction(number: Latex, numerator: Latex, denominator: Latex) : Latex {
             return Latex("{${number.string}}\\tfrac{${numerator.string}}{${denominator.string}}")
         }
-        fun sqrt(number: Latex, n: Int = 2) : Latex {
+        fun sqrt(number: Latex, /*@Range(min=1, max=Short.MAX_VALUE)*/ n: Int = 2) : Latex {
             if (n == 2) return Latex("\\sqrt{${number.string}}")
             return Latex("\\sqrt[${n}]{${number.string}}")
         }
